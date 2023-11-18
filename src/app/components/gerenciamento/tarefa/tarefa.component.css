@@ -1,0 +1,60 @@
+.container{
+    width: 100%;
+}
+
+.dados{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 10px;
+}
+
+.dados .info{
+    height: 30px;
+    margin-left: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .pesquisar{
+    width: 100%;
+    margin-top: 10px;
+    margin-left: 25px;
+}
+
+.container .tarefa{
+    width: 19%;
+}
+
+.container .acompanhamento{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.acompanhamento .tarefa{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    color: white;
+    font-weight: 600;
+    padding: 5px;
+}
+
+#andamento{
+    background-color: blue;
+}
+
+#pausado{
+    background-color: rgb(153, 153, 0);
+}
+
+#concluido{
+    background-color: green;
+}
+
+#cancelado{
+    background-color: red;
+}

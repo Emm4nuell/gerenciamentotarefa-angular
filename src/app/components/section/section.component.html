@@ -1,1 +1,17 @@
-<p>section works!</p>
+<div class="section">
+    <div class="sectionlabel">
+        <h1>Gerenciamento de Tarefas</h1>
+        <button mat-stroked-button color="primary">+ Criar nova tarefa</button>
+    </div>
+    <div class="sectionmenu">
+        <ul>
+            <li><a routerLink="/">Acompanhamento</a></li>
+            <li><a href="">Listar</a></li>
+            <li><a href="">Detalhes</a></li>
+            <li><a href="">Arquivos</a></li>
+        </ul>
+    </div>
+    <div class="sectiontarefa">
+        <router-outlet></router-outlet>
+    </div>
+</div>

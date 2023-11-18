@@ -1,0 +1,42 @@
+.nav{
+    width: 100%;
+    margin: 0;
+    display: flex;
+    height: 94%;
+}
+
+.menu{
+    border-right: 2px solid #ccc;
+    width: 40px;
+    transition: 1s;
+}
+
+.section{
+    width: 100%;
+}
+
+ul{
+    padding: 0;
+}
+
+ul li{
+    text-align: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    /*background-color: red;*/
+    margin-top: 15px;
+}
+
+ul li a{
+    text-decoration: none;
+}
+
+.menu:hover{
+    width: 230px;
+    transition: 1s;
+}
+
+mat-icon{
+    color: #1f1f24;
+}

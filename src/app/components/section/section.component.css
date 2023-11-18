@@ -1,0 +1,39 @@
+.section{
+    width: 100%;
+}
+
+.sectionlabel{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 25px;
+}
+
+.sectionlabel h1{
+    font-weight: bold;
+}
+
+.sectionmenu{
+    width: 100%;
+    border-bottom: 2px solid #ccc;
+}
+
+.sectionmenu ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.sectionmenu ul li{
+    list-style-type: none;
+    margin-left: 30px;
+    border-bottom: 2px solid #ccc;
+    margin-bottom: -2px;
+}
+
+.sectionmenu ul li a{
+    text-decoration: none;
+}
+
+.sectionmenu ul li:hover{
+    border-bottom: 2px solid #1f1f24;
+}
