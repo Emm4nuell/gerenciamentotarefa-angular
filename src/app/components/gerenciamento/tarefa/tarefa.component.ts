@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Tarefa } from 'src/app/interfaces/tarefa';
 import { TarefaService } from 'src/app/service/tarefa.service';
 
 @Component({
@@ -8,9 +9,22 @@ import { TarefaService } from 'src/app/service/tarefa.service';
 })
 export class TarefaComponent implements OnInit {
 
+  aceitar: boolean = false;
+
+  tarefas: Tarefa[] = []
+
   constructor(private tarefaservice: TarefaService) { }
 
   ngOnInit(): void {
+    this.findAll();
+  }
+
+  btnaceitar(): void{
+    this.aceitar = this.aceitar ? false : true;
+  }
+
+  findAll(){
+    this.tarefaservice.findAll().subscribe((x) => this.tarefas = x);
   }
 
 }

@@ -11,6 +11,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { NavComponent } from './components/nav/nav.component';
 import { SectionComponent } from './components/section/section.component';
 import { TarefaComponent } from './components/gerenciamento/tarefa/tarefa.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { TarefaComponent } from './components/gerenciamento/tarefa/tarefa.compon
     BrowserAnimationsModule,
     MatIconModule,
     MatButtonModule,
-    MatInputModule
+    MatInputModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

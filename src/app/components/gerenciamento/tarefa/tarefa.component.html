@@ -1,5 +1,11 @@
 <div class="container">
 
+    <div class="popupaceitar" id="popupaceitar" *ngIf="aceitar">
+        <div class="popupbtnaceitar">
+            <a href="" (click)="btnaceitar()"><mat-icon>close</mat-icon></a>
+        </div>
+    </div>
+
     <div class="dados">
         <div class="info">Info lider</div>
         <div class="info">Equipe nas tarefas</div>
@@ -8,9 +14,115 @@
         <input type="text" placeholder="Pesquisar">
     </div>
     <div class="acompanhamento">
-        <div class="tarefa" id="andamento">Em andamento</div>
-        <div class="tarefa" id="pausado">Pausado</div>
-        <div class="tarefa" id="concluido">Concluido</div>
-        <div class="tarefa" id="cancelado">Cancelado</div>
+        <div class="tarefa" id="pendente"> <mat-icon>schedule</mat-icon> Pendentes</div>
+        <div class="tarefa" id="andamento"> <mat-icon>schedule</mat-icon> Em andamento</div>
+        <div class="tarefa" id="concluido"> <mat-icon>done</mat-icon> Concluidas</div>
+        <div class="tarefa" id="cancelado"> <mat-icon>close</mat-icon> Cancelado</div>
+    </div>
+
+
+    <!-- Tabela para acompanhamento das tarefas -->
+    <div class="acompanhamentolist">
+
+        <div class="listtarefas">
+            <div *ngFor="let item of tarefas">
+                <div class="tarefas" *ngIf="item.status == '0'">
+
+                    <div class="label">
+                        <h1>{{item.nometarefa}}</h1>
+                    </div>
+
+                    <div class="descricao">
+                        <h2>{{item.descricao}}</h2>
+                    </div>
+
+                    <div class="datas">
+                        <div class="andamento">
+                            <h3>Data criação</h3>
+                            <h2>{{item.datacriacao}}</h2>
+                        </div>
+                        <div class="andamento" *ngIf="item.datarecebimento != null">
+                            <h3>Data recebido</h3>
+                            <h2>{{item.datarecebimento}}</h2>
+                        </div>
+                        <div class="andamento"></div>
+                        
+                    </div>
+
+                    <div class="aceitar btaceitar">
+                        <button type="button" (click)="btnaceitar()"><mat-icon>double_arrow</mat-icon></button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="listtarefas">
+            <div *ngFor="let item of tarefas">
+                <div class="tarefas" *ngIf="item.status == '1'">
+
+                    <div class="label">
+                        <h1>{{item.nometarefa}}</h1>
+                    </div>
+
+                    <div class="descricao">
+                        <h2>{{item.descricao}}</h2>
+                    </div>
+
+                    <div class="datas">
+                        <div class="andamento">
+                            <h3>Data criação</h3>
+                            <h2>{{item.datacriacao}}</h2>
+                        </div>
+                        <div class="andamento" *ngIf="item.datarecebimento != null">
+                            <h3>Data recebido</h3>
+                            <h2>{{item.datarecebimento}}</h2>
+                        </div>
+                        <div class="andamento"></div>
+                        
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="listtarefas">
+            <div *ngFor="let item of tarefas">
+                <div class="tarefas" *ngIf="item.status == '2'">
+
+                    <div class="label">
+                        <h1>{{item.nometarefa}}</h1>
+                    </div>
+
+                    <div class="descricao">
+                        <h2>{{item.descricao}}</h2>
+                    </div>
+
+                    <div class="datas">
+                        <div class="andamento">
+                            <h3>Data criação</h3>
+                            <h2>{{item.datacriacao}}</h2>
+                        </div>
+                        <div class="andamento" *ngIf="item.datarecebimento != null">
+                            <h3>Data recebido</h3>
+                            <h2>{{item.datarecebimento}}</h2>
+                        </div>
+                        <div class="andamento" *ngIf="item.dataconcluido != null">
+                            <h3>Data concluida</h3>
+                            <h2>{{item.dataconcluido}}</h2>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="listtarefas">
+            <div *ngFor="let item of tarefas">
+                <div class="tarefas" *ngIf="item.status == '3'">
+                    <h1>{{item.nometarefa}}</h1>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

@@ -26,10 +26,17 @@ ul li{
     padding: 0;
     /*background-color: red;*/
     margin-top: 15px;
+    overflow: hidden;
 }
 
 ul li a{
     text-decoration: none;
+}
+
+ul li a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .menu:hover{

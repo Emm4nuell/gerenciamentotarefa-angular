@@ -26,11 +26,12 @@
     margin-left: 25px;
 }
 
-.container .tarefa{
-    width: 19%;
+.container .tarefa, .listtarefas{
+    width: 23%;
+    padding: 0px;
 }
 
-.container .acompanhamento{
+.container .acompanhamento, .container .acompanhamentolist{
     display: flex;
     justify-content: space-around;
     margin-top: 20px;
@@ -38,26 +39,145 @@
 
 .acompanhamento .tarefa{
     display: flex;
-    justify-content: center;
     align-items: center;
-    border-radius: 10px;
-    color: white;
+    color: #1f1f24;
+    border-bottom: 2px solid #1f1f24;
     font-weight: 600;
     height: 25px;
+    gap: 6px;
 }
 
-#andamento{
-    background-color: blue;
+.listtarefas .tarefas{
+    border-radius: 5px;
+    box-shadow: 0px 0px 6px #9e9e9e;
+    margin-bottom: 10px;
+    display: grid;
+    padding: 6px;
+    cursor: pointer;
 }
 
-#pausado{
-    background-color: rgb(153, 153, 0);
+.tarefas h1{
+    font-weight: bold;
+    font-size: 13px;
+    margin-bottom: 0;
 }
 
-#concluido{
-    background-color: green;
+.tarefas .label{
+    padding: 0;
+    margin: 0;
 }
 
-#cancelado{
-    background-color: red;
+.tarefas .descricao{
+    margin-top: 10px;
+}
+
+h2, h3{
+    padding: 0;
+    margin: 0;
+}
+
+h3{
+    font-size: 10px;
+    color: green;
+}
+
+h2{
+    margin-top: -10px;
+    font-size: 10px;
+}
+
+h1, h2, h3{
+    line-height: 20px;
+}
+
+#pendente mat-icon{
+    color: yellow;
+    font-weight: bold;
+}
+
+#andamento mat-icon{
+    color: green;
+    font-weight: bold;
+}
+
+#concluido mat-icon{
+    color: green;
+    font-weight: bold;
+}
+
+#cancelado mat-icon{
+    color: red;
+    font-weight: bold;
+}
+
+.listtarefas .datas{
+    display: flex;
+    justify-content: space-between;
+}
+
+.datas .andamento{
+    width: 33%;
+}
+
+.aceitar{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.aceitar button{
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    transition: 1s;
+}
+
+button:hover{
+    transform: scale(1.5);
+    transition: 1s;
+}
+
+.btaceitar mat-icon{
+    color: green;
+}
+
+.popupaceitar{
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.600);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ .popupbtnaceitar{
+    width: 400px;
+    height: 300px;
+    background-color: white;
+    box-shadow: 0px 0px 10px #828282;
+    border-radius: 10px;
+}
+
+.popupbtnaceitar a{
+    float: right;
+    border-radius: 100%;
+    border: none;
+    margin: auto;
+    margin-top: -3px;
+    margin-right: 3px;
+    color: red;
+    transition: 1s;
+}
+
+.popupbtnaceitar a mat-icon{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.popupbtnaceitar a:hover{
+    transform: scale(1.3);
+    transition: 1s;
 }
