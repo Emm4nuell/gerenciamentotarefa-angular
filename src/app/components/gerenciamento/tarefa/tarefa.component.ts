@@ -57,7 +57,7 @@ export class TarefaComponent implements OnInit {
     this.tarefaservice.findByIdData(this.tarefa).subscribe({next: (response) => {
       this.aceitar = this.aceitar ? false : true;
       this.findAll();
-      this.router.navigate(['/'])
+      this.router.navigate(['/']) 
     }, error: (error) =>{
       console.error(error);
     }})}
