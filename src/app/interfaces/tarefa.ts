@@ -1,5 +1,5 @@
 export interface Tarefa {
-    id: number;
+    id?: any;
     nometarefa: String;
     descricao: String;
     datacriacao: String;
@@ -7,5 +7,7 @@ export interface Tarefa {
     dataconcluido: String;
     observacao: String;
     status: String;
-    usuario: String;
+    usuario: {
+        id: String;
+    };
 }

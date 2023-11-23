@@ -12,6 +12,7 @@ import { NavComponent } from './components/nav/nav.component';
 import { SectionComponent } from './components/section/section.component';
 import { TarefaComponent } from './components/gerenciamento/tarefa/tarefa.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatIconModule,
     MatButtonModule,
     MatInputModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

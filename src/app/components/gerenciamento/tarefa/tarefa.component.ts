@@ -1,4 +1,7 @@
+import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { Tarefa } from 'src/app/interfaces/tarefa';
 import { TarefaService } from 'src/app/service/tarefa.service';
 
@@ -13,7 +16,21 @@ export class TarefaComponent implements OnInit {
 
   tarefas: Tarefa[] = []
 
-  constructor(private tarefaservice: TarefaService) { }
+  tarefa: Tarefa = {
+    id: '',
+    nometarefa: '',
+    descricao: '',
+    datacriacao: '',
+    datarecebimento: '',
+    dataconcluido: '',
+    observacao: '',
+    status: '',
+    usuario: {
+      id: ''
+    }
+  }
+
+  constructor(private tarefaservice: TarefaService, private router: Router) { }
 
   ngOnInit(): void {
     this.findAll();
@@ -26,5 +43,23 @@ export class TarefaComponent implements OnInit {
   findAll(){
     this.tarefaservice.findAll().subscribe((x) => this.tarefas = x);
   }
+
+  finById(id: String){
+    this.aceitar = this.aceitar ? false : true;
+    this.tarefaservice.findById(id).subscribe({next: (response: any)=> {
+      this.tarefa = response
+    }, error: (err)=>{
+      console.error("Error: " + err)
+    }})
+  }
+
+  submit(){
+    this.tarefaservice.findByIdData(this.tarefa).subscribe({next: (response) => {
+      this.aceitar = this.aceitar ? false : true;
+      this.findAll();
+      this.router.navigate(['/'])
+    }, error: (error) =>{
+      console.error(error);
+    }})}
 
 }

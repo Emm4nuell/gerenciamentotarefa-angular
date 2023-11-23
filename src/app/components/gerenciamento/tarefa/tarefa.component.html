@@ -1,9 +1,39 @@
 <div class="container">
 
     <div class="popupaceitar" id="popupaceitar" *ngIf="aceitar">
-        <div class="popupbtnaceitar">
-            <a href="" (click)="btnaceitar()"><mat-icon>close</mat-icon></a>
-        </div>
+        <form action="">
+            <div class="popupbtnaceitar">
+                <div class="popupvalor">
+                    <label for="">Tarefa: </label>
+                    <input type="text" [(ngModel)]="tarefa.nometarefa" name="nometarefa">
+                </div>
+    
+                <div class="popupvalor">
+                    <label for="">Descrição: </label>
+                    <input type="text" [(ngModel)]="tarefa.descricao" name="descricao" disabled>
+                </div>
+    
+                <div class="popupvalor">
+                    <label for="">Data de Criação: </label>
+                    <input type="date" [(ngModel)]="tarefa.datacriacao" name="datacriacao" disabled>
+                </div>
+    
+                <div class="popupvalor">
+                    <label for="">Status: </label>
+                    <input type="text" [(ngModel)]="tarefa.status" name="status" disabled>
+                </div>
+    
+                <div class="popupvalor">
+                    <label for="">Observação: </label>
+                    <input type="text" [(ngModel)]="tarefa.observacao" name="observacao" disabled>
+                </div>
+    
+                <div class="popupbtn">
+                    <button id="aceitar" type="submit" (click)="submit()" mat-stroked-button color="accent">Aceitar</button>
+                    <button id="cancelar" mat-stroked-button color="warn" (click)="btnaceitar()">Cancelar</button>
+                </div>
+            </div>
+        </form>        
     </div>
 
     <div class="dados">
@@ -38,19 +68,19 @@
 
                     <div class="datas">
                         <div class="andamento">
-                            <h3>Data criação</h3>
-                            <h2>{{item.datacriacao}}</h2>
+                            <label for="">Data criação</label>
+                            <input type="date" value="{{item.datacriacao}}" disabled>
                         </div>
                         <div class="andamento" *ngIf="item.datarecebimento != null">
-                            <h3>Data recebido</h3>
-                            <h2>{{item.datarecebimento}}</h2>
+                            <label for="">Data recebido</label>
+                            <input type="date" value="{{item.datarecebimento}}" disabled>
                         </div>
                         <div class="andamento"></div>
                         
                     </div>
 
                     <div class="aceitar btaceitar">
-                        <button type="button" (click)="btnaceitar()"><mat-icon>double_arrow</mat-icon></button>
+                        <button type="button" (click)="finById(item.id)"><mat-icon>double_arrow</mat-icon></button>
                     </div>
 
                 </div>
@@ -71,12 +101,12 @@
 
                     <div class="datas">
                         <div class="andamento">
-                            <h3>Data criação</h3>
-                            <h2>{{item.datacriacao}}</h2>
+                            <label for="">Data criação</label>
+                            <input type="date" value="{{item.datacriacao}}" disabled>
                         </div>
                         <div class="andamento" *ngIf="item.datarecebimento != null">
-                            <h3>Data recebido</h3>
-                            <h2>{{item.datarecebimento}}</h2>
+                            <label for="">Data recebido</label>
+                            <input type="date" value="{{item.datarecebimento}}" disabled>
                         </div>
                         <div class="andamento"></div>
                         
@@ -100,16 +130,16 @@
 
                     <div class="datas">
                         <div class="andamento">
-                            <h3>Data criação</h3>
-                            <h2>{{item.datacriacao}}</h2>
+                            <label for="">Data criação</label>
+                            <input type="date" value="{{item.datacriacao}}" disabled>
                         </div>
                         <div class="andamento" *ngIf="item.datarecebimento != null">
-                            <h3>Data recebido</h3>
-                            <h2>{{item.datarecebimento}}</h2>
+                            <label for="">Data recebido</label>
+                            <input type="date" value="{{item.datarecebimento}}" disabled>
                         </div>
                         <div class="andamento" *ngIf="item.dataconcluido != null">
-                            <h3>Data concluida</h3>
-                            <h2>{{item.dataconcluido}}</h2>
+                            <label for="">Data concluida</label>
+                            <input type="date" value="{{item.dataconcluido}}" disabled>
                         </div>
                         
                     </div>

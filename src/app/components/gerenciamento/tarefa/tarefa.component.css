@@ -76,19 +76,11 @@ h2, h3{
     margin: 0;
 }
 
-h3{
-    font-size: 10px;
-    color: green;
-}
-
 h2{
     margin-top: -10px;
     font-size: 10px;
 }
 
-h1, h2, h3{
-    line-height: 20px;
-}
 
 #pendente mat-icon{
     color: yellow;
@@ -99,6 +91,8 @@ h1, h2, h3{
     color: green;
     font-weight: bold;
 }
+
+
 
 #concluido mat-icon{
     color: green;
@@ -117,6 +111,24 @@ h1, h2, h3{
 
 .datas .andamento{
     width: 33%;
+}
+
+.andamento input, .andamento label{
+    padding: 0;
+    margin: 0;
+    font-size: 10px;
+    border: none;
+}
+
+.andamento input{
+    margin-top: -50px;
+    margin: 0;
+    padding: 0;
+}
+
+.andamento label{
+    color: green;
+    margin-bottom: -10px;
 }
 
 .aceitar{
@@ -155,29 +167,41 @@ button:hover{
 
  .popupbtnaceitar{
     width: 400px;
-    height: 300px;
     background-color: white;
     box-shadow: 0px 0px 10px #828282;
     border-radius: 10px;
-}
-
-.popupbtnaceitar a{
-    float: right;
-    border-radius: 100%;
-    border: none;
-    margin: auto;
-    margin-top: -3px;
-    margin-right: 3px;
-    color: red;
-    transition: 1s;
-}
-
-.popupbtnaceitar a mat-icon{
-    font-size: 30px;
-    font-weight: bold;
+    padding: 10px;
 }
 
 .popupbtnaceitar a:hover{
     transform: scale(1.3);
     transition: 1s;
+}
+
+.popupvalor label{
+    font-weight: bold;
+}
+
+.popupvalor input{
+    border: none;
+}
+
+.popupbtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 1rem;
+}
+
+.popupbtn button:hover{
+    transform: scale(1.3);
+}
+
+.popupbtnaceitar .popupvalor{
+    margin-bottom: 10px;
+}
+
+.popupvalor input{
+    width: 100%;
 }
