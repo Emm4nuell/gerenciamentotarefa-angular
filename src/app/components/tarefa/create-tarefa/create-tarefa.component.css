@@ -1,0 +1,29 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    margin: auto;
+    width: 60%;
+    display: grid;
+    margin-top: 1rem;
+}
+
+button{
+    cursor: pointer;
+    border: none;
+    height: 50px;
+    background-color: rgb(32, 136, 32);
+    font-weight: bold;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    transition: 1s;
+    border-radius: 5px;
+}
+
+button:hover{
+    transform: scale(1.03);
+    transition: 1s;
+}

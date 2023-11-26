@@ -20,8 +20,12 @@ export class TarefaService {
     return this.http.get<Tarefa>(`${this.apiUrl}/${id}`);
   }
 
-  findByIdData(tarefa: any):Observable<Tarefa>{
+  findByIdDataUpdate(tarefa: any):Observable<Tarefa>{
     return this.http.put<Tarefa>(`${this.apiUrl}/monitoramento/${tarefa.id}`, tarefa);
+  }
+
+  createTarefa(tarefa: Tarefa): Observable<Tarefa>{
+    return this.http.post<Tarefa>(`${this.apiUrl}`, tarefa);
   }
 
 }

@@ -54,7 +54,7 @@ export class TarefaComponent implements OnInit {
   }
 
   submit(){
-    this.tarefaservice.findByIdData(this.tarefa).subscribe({next: (response) => {
+    this.tarefaservice.findByIdDataUpdate(this.tarefa).subscribe({next: (response) => {
       this.aceitar = this.aceitar ? false : true;
       this.findAll();
       this.router.navigate(['/']) 

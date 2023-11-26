@@ -11,6 +11,10 @@ export class SectionComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit(): void {
+    this.router.navigate(['/'])
+  }
+
+  criartarefa(): void{
     this.router.navigate(['/criartarefa'])
   }
 

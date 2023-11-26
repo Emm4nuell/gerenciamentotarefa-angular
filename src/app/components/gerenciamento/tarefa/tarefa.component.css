@@ -1,29 +1,11 @@
 .container{
     width: 100%;
+    height: 76vh;
 }
 
-.dados{
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    margin-top: 10px;
-}
-
-.dados .info{
-    height: 30px;
-    margin-left: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.container .pesquisar{
-    width: 100%;
-    margin-top: 10px;
-}
-
-.pesquisar input{
-    margin-left: 25px;
+.acompanhamentolist{
+    overflow: auto;
+    height: 63vh;
 }
 
 .container .tarefa, .listtarefas{
@@ -54,6 +36,7 @@
     display: grid;
     padding: 6px;
     cursor: pointer;
+    background-color: white;
 }
 
 .tarefas h1{
