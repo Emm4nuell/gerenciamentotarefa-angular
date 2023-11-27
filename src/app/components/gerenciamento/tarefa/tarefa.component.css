@@ -30,13 +30,18 @@
 }
 
 .listtarefas .tarefas{
+    /* border: 2px solid black; */
     border-radius: 5px;
     box-shadow: 0px 0px 6px #9e9e9e;
     margin-bottom: 10px;
-    display: grid;
+    display: flex;
     padding: 6px;
     cursor: pointer;
     background-color: white;
+}
+
+.tarefas .divtarefa{
+    width: 90%;
 }
 
 .tarefas h1{
@@ -187,4 +192,16 @@ button:hover{
 
 .popupvalor input{
     width: 100%;
+}
+
+.tarefared{
+    border-left: 6px solid red;
+}
+
+.tarefagreen{
+    border-left: 6px solid green;
+}
+
+.tarefayellow{
+    border-left: 6px solid yellow;
 }

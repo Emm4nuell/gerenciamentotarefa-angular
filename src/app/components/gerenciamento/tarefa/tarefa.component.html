@@ -7,33 +7,34 @@
                     <label for="">Tarefa: </label>
                     <input type="text" [(ngModel)]="tarefa.nometarefa" name="nometarefa">
                 </div>
-    
+
                 <div class="popupvalor">
                     <label for="">Descrição: </label>
                     <input type="text" [(ngModel)]="tarefa.descricao" name="descricao" disabled>
                 </div>
-    
+
                 <div class="popupvalor">
                     <label for="">Data de Criação: </label>
                     <input type="date" [(ngModel)]="tarefa.datacriacao" name="datacriacao" disabled>
                 </div>
-    
+
                 <div class="popupvalor">
                     <label for="">Status: </label>
                     <input type="text" [(ngModel)]="tarefa.status" name="status" disabled>
                 </div>
-    
+
                 <div class="popupvalor">
                     <label for="">Observação: </label>
                     <input type="text" [(ngModel)]="tarefa.observacao" name="observacao" disabled>
                 </div>
-    
+
                 <div class="popupbtn">
-                    <button id="aceitar" type="submit" (click)="submit()" mat-stroked-button color="accent">Aceitar</button>
+                    <button id="aceitar" type="submit" (click)="submit()" mat-stroked-button
+                        color="accent">Aceitar</button>
                     <button id="cancelar" mat-stroked-button color="warn" (click)="btnaceitar()">Cancelar</button>
                 </div>
             </div>
-        </form>        
+        </form>
     </div>
 
     <div class="acompanhamento">
@@ -49,27 +50,35 @@
 
         <div class="listtarefas">
             <div *ngFor="let item of tarefas">
-                <div class="tarefas" *ngIf="item.status == '0'">
+                <div class="tarefas" *ngIf="item.status == '0'" [ngClass]="{
+                    'tarefagreen': item.prioridade == '1', 
+                    'tarefayellow': item.prioridade == '2', 
+                    'tarefared': item.prioridade == '3'}">
+                    <!-- [ngStyle]="{'backgroundColor': (item.prioridade == '1'? 'green' : (item.prioridade == '2'? 'yellow': 'red')) }" -->
 
-                    <div class="label">
-                        <h1>{{item.nometarefa}}</h1>
-                    </div>
-
-                    <div class="descricao">
-                        <h2>{{item.descricao}}</h2>
-                    </div>
-
-                    <div class="datas">
-                        <div class="andamento">
-                            <label for="">Data criação</label>
-                            <input type="date" value="{{item.datacriacao}}" disabled>
+                    <div class="divtarefa">
+                        <div class="label">
+                            <h1>{{item.nometarefa}}</h1>
                         </div>
-                        <div class="andamento" *ngIf="item.datarecebimento != null">
-                            <label for="">Data recebido</label>
-                            <input type="date" value="{{item.datarecebimento}}" disabled>
+
+                        <!-- <div class="descricao">
+                            <h2>{{item.descricao}}</h2>
+                        </div> -->
+
+                        <div class="datas">
+                            <div class="andamento">
+                                <label for="">Data criação</label>
+                                <input type="date" value="{{item.datacriacao}}" disabled>
+                            </div>
+                            <div class="andamento" *ngIf="item.datarecebimento != null">
+                                <label for="">Data recebido</label>
+                                <input type="date" value="{{item.datarecebimento}}" disabled>
+                            </div>
+                            <div class="andamento" *ngIf="item.dataconcluido != null">
+                                <label for="">Data concluida</label>
+                                <input type="date" value="{{item.dataconcluido}}" disabled>
+                            </div>
                         </div>
-                        <div class="andamento"></div>
-                        
                     </div>
 
                     <div class="aceitar btaceitar">
@@ -82,27 +91,39 @@
 
         <div class="listtarefas">
             <div *ngFor="let item of tarefas">
-                <div class="tarefas" *ngIf="item.status == '1'">
+                <div class="tarefas" *ngIf="item.status == '1'" [ngClass]="{
+                    'tarefagreen': item.prioridade == '1', 
+                    'tarefayellow': item.prioridade == '2', 
+                    'tarefared': item.prioridade == '3'}">
 
-                    <div class="label">
-                        <h1>{{item.nometarefa}}</h1>
+                    <div class="divtarefa">
+                        <div class="label">
+                            <h1>{{item.nometarefa}}</h1>
+                        </div>
+
+                        <!-- <div class="descricao">
+        <h2>{{item.descricao}}</h2>
+    </div> -->
+
+                        <div class="datas">
+                            <div class="andamento">
+                                <label for="">Data criação</label>
+                                <input type="date" value="{{item.datacriacao}}" disabled>
+                            </div>
+                            <div class="andamento" *ngIf="item.datarecebimento != null">
+                                <label for="">Data recebido</label>
+                                <input type="date" value="{{item.datarecebimento}}" disabled>
+                            </div>
+                            <div class="andamento" *ngIf="item.dataconcluido != null">
+                                <label for="">Data concluida</label>
+                                <input type="date" value="{{item.dataconcluido}}" disabled>
+                            </div>
+                        </div>
+
                     </div>
 
-                    <div class="descricao">
-                        <h2>{{item.descricao}}</h2>
-                    </div>
-
-                    <div class="datas">
-                        <div class="andamento">
-                            <label for="">Data criação</label>
-                            <input type="date" value="{{item.datacriacao}}" disabled>
-                        </div>
-                        <div class="andamento" *ngIf="item.datarecebimento != null">
-                            <label for="">Data recebido</label>
-                            <input type="date" value="{{item.datarecebimento}}" disabled>
-                        </div>
-                        <div class="andamento"></div>
-                        
+                    <div class="aceitar btaceitar">
+                        <button type="button" (click)="finById(item.id)"><mat-icon>double_arrow</mat-icon></button>
                     </div>
 
                 </div>
@@ -113,28 +134,30 @@
             <div *ngFor="let item of tarefas">
                 <div class="tarefas" *ngIf="item.status == '2'">
 
-                    <div class="label">
-                        <h1>{{item.nometarefa}}</h1>
-                    </div>
+                    <div class="divtarefa">
+                        <div class="label">
+                            <h1>{{item.nometarefa}}</h1>
+                        </div>
 
-                    <div class="descricao">
-                        <h2>{{item.descricao}}</h2>
-                    </div>
+                        <!-- <div class="descricao">
+                            <h2>{{item.descricao}}</h2>
+                        </div> -->
 
-                    <div class="datas">
-                        <div class="andamento">
-                            <label for="">Data criação</label>
-                            <input type="date" value="{{item.datacriacao}}" disabled>
+                        <div class="datas">
+                            <div class="andamento">
+                                <label for="">Data criação</label>
+                                <input type="date" value="{{item.datacriacao}}" disabled>
+                            </div>
+                            <div class="andamento" *ngIf="item.datarecebimento != null">
+                                <label for="">Data recebido</label>
+                                <input type="date" value="{{item.datarecebimento}}" disabled>
+                            </div>
+                            <div class="andamento" *ngIf="item.dataconcluido != null">
+                                <label for="">Data concluida</label>
+                                <input type="date" value="{{item.dataconcluido}}" disabled>
+                            </div>
                         </div>
-                        <div class="andamento" *ngIf="item.datarecebimento != null">
-                            <label for="">Data recebido</label>
-                            <input type="date" value="{{item.datarecebimento}}" disabled>
-                        </div>
-                        <div class="andamento" *ngIf="item.dataconcluido != null">
-                            <label for="">Data concluida</label>
-                            <input type="date" value="{{item.dataconcluido}}" disabled>
-                        </div>
-                        
+
                     </div>
                 </div>
             </div>

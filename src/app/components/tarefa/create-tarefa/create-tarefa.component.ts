@@ -19,6 +19,7 @@ export class CreateTarefaComponent implements OnInit {
     dataconcluido: '',
     observacao: '',
     status: '',
+    prioridade: '',
     usuario: {
       id: '1'
     }

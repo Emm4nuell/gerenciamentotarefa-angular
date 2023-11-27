@@ -7,6 +7,7 @@ export interface Tarefa {
     dataconcluido: String;
     observacao: String;
     status: String;
+    prioridade: String;
     usuario: {
         id: String;
     };

@@ -25,6 +25,7 @@ export class TarefaComponent implements OnInit {
     dataconcluido: '',
     observacao: '',
     status: '',
+    prioridade: '',
     usuario: {
       id: ''
     }
@@ -39,6 +40,13 @@ export class TarefaComponent implements OnInit {
   btnaceitar(): void{
     this.aceitar = this.aceitar ? false : true;
   }
+
+  color(id: String): any{
+    if(id == '3'){
+      return "red";
+    }
+  }
+
 
   findAll(){
     this.tarefaservice.findAll().subscribe((x) => this.tarefas = x);
