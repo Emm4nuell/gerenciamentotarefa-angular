@@ -8,7 +8,7 @@ import { Tarefa } from '../interfaces/tarefa';
 })
 export class TarefaService {
 
-  private apiUrl = "http://localhost:8080/tarefa";
+  private apiUrl = "http://206.42.51.75:8080/tarefa";
 
   constructor(private http: HttpClient) { }
 

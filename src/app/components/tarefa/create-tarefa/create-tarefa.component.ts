@@ -25,6 +25,8 @@ export class CreateTarefaComponent implements OnInit {
     }
   }
 
+  selectPrioridade: String[] = ['Selecione', 'Baixa', 'Media', 'Alta'];
+
   constructor(private service: TarefaService, private router: Router) { }
 
   ngOnInit(): void {

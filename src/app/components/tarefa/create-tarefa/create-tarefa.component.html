@@ -15,6 +15,13 @@
             <input type="date" matInput [(ngModel)]="tarefa.dataconcluido" name="dataconcluido" placeholder="Ex. Data conclusão">
           </mat-form-field>
 
+          <mat-form-field>
+            <mat-label>Prioridade</mat-label>
+            <select matNativeControl [(ngModel)]="tarefa.prioridade" name="car">
+              <option value="" *ngFor="let item of selectPrioridade ; let x = index" [value]="x">{{item}}</option>
+            </select>
+          </mat-form-field>
+
           <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Observação</mat-label>
             <input type="text" [(ngModel)]="tarefa.observacao" name="observacao" matInput placeholder="Ex. Observação">

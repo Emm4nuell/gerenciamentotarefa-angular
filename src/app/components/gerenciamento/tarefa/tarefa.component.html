@@ -24,6 +24,11 @@
                 </div>
 
                 <div class="popupvalor">
+                    <label for="">Prioridade: </label>
+                    <input type="text" [(ngModel)]="tarefa.prioridade" name="prioridade" disabled>
+                </div>
+
+                <div class="popupvalor">
                     <label for="">Observação: </label>
                     <input type="text" [(ngModel)]="tarefa.observacao" name="observacao" disabled>
                 </div>
@@ -53,17 +58,12 @@
                 <div class="tarefas" *ngIf="item.status == '0'" [ngClass]="{
                     'tarefagreen': item.prioridade == '1', 
                     'tarefayellow': item.prioridade == '2', 
-                    'tarefared': item.prioridade == '3'}">
-                    <!-- [ngStyle]="{'backgroundColor': (item.prioridade == '1'? 'green' : (item.prioridade == '2'? 'yellow': 'red')) }" -->
+                    '': item.prioridade == '3'}">
 
                     <div class="divtarefa">
                         <div class="label">
                             <h1>{{item.nometarefa}}</h1>
                         </div>
-
-                        <!-- <div class="descricao">
-                            <h2>{{item.descricao}}</h2>
-                        </div> -->
 
                         <div class="datas">
                             <div class="andamento">
@@ -81,8 +81,8 @@
                         </div>
                     </div>
 
-                    <div class="aceitar btaceitar">
-                        <button type="button" (click)="finById(item.id)"><mat-icon>double_arrow</mat-icon></button>
+                    <div class="aceitar btaceitar" [ngClass]="{'btaceitaranimacao': item.prioridade == '3'}">
+                        <a (click)="finById(item.id)"><mat-icon>double_arrow</mat-icon></a>
                     </div>
 
                 </div>
@@ -93,17 +93,12 @@
             <div *ngFor="let item of tarefas">
                 <div class="tarefas" *ngIf="item.status == '1'" [ngClass]="{
                     'tarefagreen': item.prioridade == '1', 
-                    'tarefayellow': item.prioridade == '2', 
-                    'tarefared': item.prioridade == '3'}">
+                    'tarefayellow': item.prioridade == '2'}">
 
                     <div class="divtarefa">
                         <div class="label">
                             <h1>{{item.nometarefa}}</h1>
                         </div>
-
-                        <!-- <div class="descricao">
-        <h2>{{item.descricao}}</h2>
-    </div> -->
 
                         <div class="datas">
                             <div class="andamento">
@@ -122,8 +117,8 @@
 
                     </div>
 
-                    <div class="aceitar btaceitar">
-                        <button type="button" (click)="finById(item.id)"><mat-icon>double_arrow</mat-icon></button>
+                    <div class="aceitar btaceitar" [ngClass]="{'btaceitaranimacao': item.prioridade == '3'}">
+                        <a (click)="finById(item.id)"><mat-icon>double_arrow</mat-icon></a>
                     </div>
 
                 </div>
@@ -138,10 +133,6 @@
                         <div class="label">
                             <h1>{{item.nometarefa}}</h1>
                         </div>
-
-                        <!-- <div class="descricao">
-                            <h2>{{item.descricao}}</h2>
-                        </div> -->
 
                         <div class="datas">
                             <div class="andamento">

@@ -35,13 +35,14 @@
     box-shadow: 0px 0px 6px #9e9e9e;
     margin-bottom: 10px;
     display: flex;
-    padding: 6px;
+    /* padding: 6px; */
     cursor: pointer;
     background-color: white;
 }
 
 .tarefas .divtarefa{
     width: 90%;
+    padding: 6px;
 }
 
 .tarefas h1{
@@ -53,6 +54,11 @@
 .tarefas .label{
     padding: 0;
     margin: 0;
+}
+
+.label h1{
+    line-height: 15px;
+    font-size: 11px;
 }
 
 .tarefas .descricao{
@@ -132,14 +138,29 @@ h2{
     transition: 1s;
 }
 
-button:hover{
-    transform: scale(1.5);
+a:hover{
+    transform: scale(1.3);
     transition: 1s;
 }
 
 .btaceitar mat-icon{
     color: green;
+    font-size: 40px;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0);
 }
+
+/* .btaceitaranimacao{
+    color: red;
+    border-radius: 0px 10px 10px 0px;
+    animation-name: animetarefa;
+    background-image: linear-gradient(to left,red, white, red, white, red, white);
+    background-size: 500% 100%;
+    animation-duration: 3s;
+    animation-direction: reverse;
+    animation-iteration-count: infinite;
+} */
 
 .popupaceitar{
     position: fixed;
