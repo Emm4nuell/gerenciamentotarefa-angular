@@ -5,7 +5,9 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "watch": "ng build --watch --configuration development"
+    "watch": "ng build --watch --configuration development",
+    "deploy:ghdocs": "ng build --output-path docs --base-href /gerenciamentotarefaangular/"
+
   },
   "private": true,
   "dependencies": {
